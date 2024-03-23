@@ -1,3 +1,3 @@
 # CuriosidadesDasOlimpiadas
  
-link: (https://albert-souza.github.io/CuriosidadesDasOlimpiadas)
+link: https://albert-souza.github.io/CuriosidadesDasOlimpiadas

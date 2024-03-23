@@ -1,12 +1,14 @@
 import obterDados from './processaDadosNaoFuncional.js'
 
-const main = () => {
-  const caminhoArquivo = 'athlete_events.csv'
-  const dados = obterDados(caminhoArquivo)
-
-  dados.then(resultado => {
-    console.log(resultado)
-  })
+const main = (resultado) => {
+  const dados = resultado
+  console.log(dados)
 }
 
-document.addEventListener("DOMContentLoaded", main)
+document.addEventListener("DOMContentLoaded", () => {
+  const caminhoArquivo = 'athlete_events.csv'
+  const dados = obterDados(caminhoArquivo)
+  dados.then(resultado => {
+    main(resultado)
+  })
+})

@@ -1,24 +1,25 @@
 const lerArquivoCSV = async (caminhoArquivo) => {
   try {
+    // Busca os arquivos e separar linhas e cabeçalhos
     const resposta = await fetch(caminhoArquivo)
     const conteudo = await resposta.text()
-    const linhas = conteudo.split('\n')
-    const cabecalho = linhas[0].split(',')
+    const linhasCabecalho = conteudo.split('\n')
+    const cabecalho = linhasCabecalho[0].split(',')
+    const linhas = linhasCabecalho.slice(1)
 
-    const extrairValores = linha => linha.split(',')
-
+    // Utiliza o cabeçalho e linha como chaves e valores para um registro e o adiciona a lista de dados
     const dados = [];
-    for (let i = 1; i < linhas.length; i++) {
-      const valores = extrairValores(linhas[i])
-
+    for (const linha of linhas) {
+      const valores = linha.split(',')
       const registro = {}
-      for (let j = 0; j < cabecalho.length; j++) {
-        registro[cabecalho[j]] = valores[j]
+      for (let i = 0; i < cabecalho.length; i++) {
+        registro[cabecalho[i]] = valores[i]
       }
       dados.push(registro)
     }
 
-    return dados;
+    return dados
+
   } catch (err) {
     console.error('Erro ao ler o arquivo:', err)
   }
