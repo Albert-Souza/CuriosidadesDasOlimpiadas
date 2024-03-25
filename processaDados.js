@@ -1,23 +1,25 @@
 const lerArquivoCSV = async (caminhoArquivo) => {
   try {
-    // Busca os arquivos e separar linhas e cabeçalhos
+    // Busca os arquivos e separa cabeçalho e linhas
     const resposta = await fetch(caminhoArquivo)
     const conteudo = await resposta.text()
     const linhasCabecalho = conteudo.split('\n')
     const cabecalho = linhasCabecalho[0].split(',')
     const linhas = linhasCabecalho.slice(1)
 
-    // Utiliza o cabeçalho e linha como chaves e valores para um registro e o adiciona a lista de dados
-    const dados = [];
-    for (const linha of linhas) {
+    // Utiliza os elementos do cabeçalho e linha como chaves e valores para se criar um registro
+    const adicionaDadosAux = (cabecalho) => (linha) => {
       const valores = linha.split(',')
-      const registro = {}
-      for (let i = 0; i < cabecalho.length; i++) {
-        registro[cabecalho[i]] = valores[i]
-      }
-      dados.push(registro)
+      const registro = cabecalho.reduce((reg, chave, indice) => {
+        reg[chave] = valores[indice]
+        return reg
+      }, {})
+      return registro
     }
 
+    const adicionaDados = adicionaDadosAux(cabecalho)
+
+    const dados = linhas.map(linha => adicionaDados(linha))
     return dados
 
   } catch (err) {

@@ -1,4 +1,4 @@
-import obterDados from './processaDadosNaoFuncional.js'
+import obterDados from './processaDados.js'
 
 const main = (resultado) => {
   const dados = resultado
@@ -8,7 +8,5 @@ const main = (resultado) => {
 document.addEventListener("DOMContentLoaded", () => {
   const caminhoArquivo = 'athlete_events.csv'
   const dados = obterDados(caminhoArquivo)
-  dados.then(resultado => {
-    main(resultado)
-  })
+  dados.then(resultado => main(resultado))
 })
