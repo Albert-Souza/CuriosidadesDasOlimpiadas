@@ -3,7 +3,8 @@ const lerArquivoCSV = async (caminhoArquivo) => {
     // Busca os arquivos e separa cabeçalho e linhas
     const resposta = await fetch(caminhoArquivo)
     const conteudo = await resposta.text()
-    const linhasCabecalho = conteudo.split('\n')
+    const conteudo2 = conteudo.replace(/"/g, '')
+    const linhasCabecalho = conteudo2.split('\n')
     const cabecalho = linhasCabecalho[0].split(',')
     const linhas = linhasCabecalho.slice(1)
 

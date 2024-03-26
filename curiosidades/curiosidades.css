@@ -57,3 +57,37 @@ footer {
   background-color: var(--azul);
   color: white;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  padding: 40px;
+  border: 5px solid black;
+  border-radius: 0.4em;
+  background-color: white;
+  color: black;
+}
+
+table, th, td {
+  border: 2px solid black;
+  padding: 10px;
+  min-width: 50%;
+  color: black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(2n) {
+  background-color: white;
+}
+
+tr:nth-child(2n+1) {
+  background-color: gray;
+}

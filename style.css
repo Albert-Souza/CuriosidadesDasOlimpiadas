@@ -87,6 +87,7 @@ h1 {
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .curiosidade:nth-child(1) {
