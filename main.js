@@ -10,28 +10,104 @@ const filtraEsporte = (dados, esporte) => {
 }
 
 const curiosidade1 = (resultado, esporte) => {
+
+  const calculaMedia = (dados, equipe) => {
+    const dadosEquipe = dados.filter(reg => reg.Team == equipe)
+
+    const soma = dadosEquipe.reduce((acc, reg) => acc + parseInt(reg.Age), 0)
+    const media = soma/dadosEquipe.length
+
+    const campo1 = document.getElementById("mediaIdadeE1C1")
+    const campo2 = document.getElementById("mediaIdadeE2C1")
+    const campo3 = document.getElementById("mediaIdadeE3C1")
+    const campo4 = document.getElementById("mediaIdadeE4C1")
+    const campo5 = document.getElementById("mediaIdadeE5C1")
+
+    switch (esporte) {
+      case 1:
+        if (dadosEquipe.length == 0) {
+          campo1.value = "Sem atletas"
+        } else {
+          campo1.value = ("" + media.toFixed(1) + " anos")
+        }
+        break
+
+      case 2:
+        if (dadosEquipe.length == 0) {
+          campo2.value = "Sem atletas"
+        } else {
+          campo2.value = ("" + media.toFixed(1) + " anos")
+        }
+        break
+
+      case 3:
+        if (dadosEquipe.length == 0) {
+          campo3.value = "Sem atletas"
+        } else {
+          campo3.value = ("" + media.toFixed(1) + " anos")
+        }
+        break
+
+      case 4:
+        if (dadosEquipe.length == 0) {
+          campo4.value = "Sem atletas"
+        } else {
+          campo4.value = ("" + media.toFixed(1) + " anos")
+        }
+        break
+        
+      case 5:
+        if (dadosEquipe.length == 0) {
+          campo5.value = "Sem atletas"
+        } else {
+          campo5.value = ("" + media.toFixed(1) + " anos")
+        }
+        break
+
+      default:
+    }
+  }
+
   const dados = filtraEsporte(resultado, esporte)
-  console.log(dados)
+
+  switch (esporte) {
+    case 1: 
+      calculaMedia(dados, document.getElementById("equipeE1C1").value)
+      break
+    case 2: 
+      calculaMedia(dados, document.getElementById("equipeE2C1").value)
+      break
+    case 3: 
+      calculaMedia(dados, document.getElementById("equipeE3C1").value)
+      break
+    case 4: 
+      calculaMedia(dados, document.getElementById("equipeE4C1").value)
+      break
+    case 5: 
+      calculaMedia(dados, document.getElementById("equipeE5C1").value)
+      break
+    default:
+  } 
 }
 
 const curiosidade2 = (resultado, esporte) => {
   const dados = filtraEsporte(resultado, esporte)
-  console.log(dados)
+
 }
 
 const curiosidade3 = (resultado, esporte) => {
   const dados = filtraEsporte(resultado, esporte)
-  console.log(dados)
+
 }
 
 const curiosidade4 = (resultado, esporte) => {
   const dados = filtraEsporte(resultado, esporte)
-  console.log(dados)
+
 }
 
 const curiosidade5 = (resultado, esporte) => {
   const dados = filtraEsporte(resultado, esporte)
-  console.log(dados)
+
 }
 
 const lerArquivoCSV = async (caminhoArquivo) => {
