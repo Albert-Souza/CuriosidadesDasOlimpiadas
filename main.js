@@ -1,21 +1,37 @@
-const curiosidade1 = (resultado) => {
-  const dados = resultado
+const filtraEsporte = (dados, esporte) => {
+  switch (esporte) {
+    case 1: return dados.filter(reg => reg.Sport == "\"Volleyball\"")
+    case 2: return dados.filter(reg => reg.Sport == "\"Taekwondo\"")
+    case 3: return dados.filter(reg => reg.Sport == "\"Athletics\"")
+    case 4: return dados.filter(reg => reg.Sport == "\"Swimming\"")
+    case 5: return dados.filter(reg => reg.Sport == "\"Cycling\"")
+    default: return
+  }
 }
 
-const curiosidade2 = (resultado) => {
-  const dados = resultado
+const curiosidade1 = (resultado, esporte) => {
+  const dados = filtraEsporte(resultado, esporte)
+  console.log(dados)
 }
 
-const curiosidade3 = (resultado) => {
-  const dados = resultado
+const curiosidade2 = (resultado, esporte) => {
+  const dados = filtraEsporte(resultado, esporte)
+  console.log(dados)
 }
 
-const curiosidade4 = (resultado) => {
-  const dados = resultado
+const curiosidade3 = (resultado, esporte) => {
+  const dados = filtraEsporte(resultado, esporte)
+  console.log(dados)
 }
 
-const curiosidade5 = (resultado) => {
-  const dados = resultado
+const curiosidade4 = (resultado, esporte) => {
+  const dados = filtraEsporte(resultado, esporte)
+  console.log(dados)
+}
+
+const curiosidade5 = (resultado, esporte) => {
+  const dados = filtraEsporte(resultado, esporte)
+  console.log(dados)
 }
 
 const lerArquivoCSV = async (caminhoArquivo) => {
@@ -48,215 +64,332 @@ const lerArquivoCSV = async (caminhoArquivo) => {
   }
 }
 
-const animacaoAbrir = (curiosidade) => {
-  const curiosidade1 = document.getElementById('curiosidade1')
-  const curiosidade2 = document.getElementById('curiosidade2')
-  const curiosidade3 = document.getElementById('curiosidade3')
-  const curiosidade4 = document.getElementById('curiosidade4')
-  const curiosidade5 = document.getElementById('curiosidade5')
-  const curiosidade1AbrirButton = document.getElementById('curiosidade1AbrirButton')
-  const curiosidade2AbrirButton = document.getElementById('curiosidade2AbrirButton')
-  const curiosidade3AbrirButton = document.getElementById('curiosidade3AbrirButton')
-  const curiosidade4AbrirButton = document.getElementById('curiosidade4AbrirButton')
-  const curiosidade5AbrirButton = document.getElementById('curiosidade5AbrirButton')
-  const curiosidade1FecharButton = document.getElementById('curiosidade1FecharButton')
-  const curiosidade2FecharButton = document.getElementById('curiosidade2FecharButton')
-  const curiosidade3FecharButton = document.getElementById('curiosidade3FecharButton')
-  const curiosidade4FecharButton = document.getElementById('curiosidade4FecharButton')
-  const curiosidade5FecharButton = document.getElementById('curiosidade5FecharButton')
-  const form1 = document.getElementById('form1')
-  const form2 = document.getElementById('form2')
-  const form3 = document.getElementById('form3')
-  const form4 = document.getElementById('form4')
-  const form5 = document.getElementById('form5')
+const animacaoAbrir = (esporte) => {
+  const esporte1 = document.getElementById('esporte1')
+  const esporte2 = document.getElementById('esporte2')
+  const esporte3 = document.getElementById('esporte3')
+  const esporte4 = document.getElementById('esporte4')
+  const esporte5 = document.getElementById('esporte5')
+  const esporte1AbrirButton = document.getElementById('esporte1AbrirButton')
+  const esporte2AbrirButton = document.getElementById('esporte2AbrirButton')
+  const esporte3AbrirButton = document.getElementById('esporte3AbrirButton')
+  const esporte4AbrirButton = document.getElementById('esporte4AbrirButton')
+  const esporte5AbrirButton = document.getElementById('esporte5AbrirButton')
+  const esporte1FecharButton = document.getElementById('esporte1FecharButton')
+  const esporte2FecharButton = document.getElementById('esporte2FecharButton')
+  const esporte3FecharButton = document.getElementById('esporte3FecharButton')
+  const esporte4FecharButton = document.getElementById('esporte4FecharButton')
+  const esporte5FecharButton = document.getElementById('esporte5FecharButton')
+  const menuAbas1 = document.getElementById('menuAbas1')
+  const menuAbas2 = document.getElementById('menuAbas2')
+  const menuAbas3 = document.getElementById('menuAbas3')
+  const menuAbas4 = document.getElementById('menuAbas4')
+  const menuAbas5 = document.getElementById('menuAbas5')
 
-  if (curiosidade == 1) {
-    curiosidade1.style.height = '90vh'
-    curiosidade1.style.gridColumn = 'span 2'
-    curiosidade2.style.display = 'none'
-    curiosidade3.style.display = 'none'
-    curiosidade4.style.display = 'none'
-    curiosidade5.style.display = 'none'
+  switch (esporte) {
+    case 1:
+      esporte1.style.height = '750px'
+      esporte1.style.gridColumn = 'span 2'
+      esporte2.style.display = 'none'
+      esporte3.style.display = 'none'
+      esporte4.style.display = 'none'
+      esporte5.style.display = 'none'
 
-    form1.style.display = 'flex'
-    curiosidade1AbrirButton.style.display = 'none'
-    curiosidade1FecharButton.style.display = 'block'
-  }
+      menuAbas1.style.display = 'flex'
+      esporte1AbrirButton.style.display = 'none'
+      esporte1FecharButton.style.display = 'block'
+      
+      break
 
-  if (curiosidade == 2) {
-    curiosidade1.style.display = 'none'
-    curiosidade2.style.height = '90vh'
-    curiosidade2.style.gridColumn = 'span 2'
-    curiosidade3.style.display = 'none'
-    curiosidade4.style.display = 'none'
-    curiosidade5.style.display = 'none'
+    case 2:
+      esporte1.style.display = 'none'
+      esporte2.style.height = '750px'
+      esporte2.style.gridColumn = 'span 2'
+      esporte3.style.display = 'none'
+      esporte4.style.display = 'none'
+      esporte5.style.display = 'none'
 
-    form2.style.display = 'flex'
-    curiosidade2AbrirButton.style.display = 'none'
-    curiosidade2FecharButton.style.display = 'block'
-  }
+      menuAbas2.style.display = 'flex'
+      esporte2AbrirButton.style.display = 'none'
+      esporte2FecharButton.style.display = 'block'
 
-  if (curiosidade == 3) {
-    curiosidade1.style.display = 'none'
-    curiosidade2.style.display = 'none'
-    curiosidade3.style.height = '90vh'
-    curiosidade3.style.gridColumn = 'span 2'
-    curiosidade4.style.display = 'none'
-    curiosidade5.style.display = 'none'
+      break
 
-    form3.style.display = 'flex'
-    curiosidade3AbrirButton.style.display = 'none'
-    curiosidade3FecharButton.style.display = 'block'
-  }
+    case 3:
+      esporte1.style.display = 'none'
+      esporte2.style.display = 'none'
+      esporte3.style.height = '750px'
+      esporte3.style.gridColumn = 'span 2'
+      esporte4.style.display = 'none'
+      esporte5.style.display = 'none'
+  
+      menuAbas3.style.display = 'flex'
+      esporte3AbrirButton.style.display = 'none'
+      esporte3FecharButton.style.display = 'block'
 
-  if (curiosidade == 4) {
-    curiosidade1.style.display = 'none'
-    curiosidade2.style.display = 'none'
-    curiosidade3.style.display = 'none'
-    curiosidade4.style.height = '90vh'
-    curiosidade4.style.gridColumn = 'span 2'
-    curiosidade5.style.display = 'none'
+      break
 
-    form4.style.display = 'flex'
-    curiosidade4AbrirButton.style.display = 'none'
-    curiosidade4FecharButton.style.display = 'block'
-  }
+    case 4:
+      esporte1.style.display = 'none'
+      esporte2.style.display = 'none'
+      esporte3.style.display = 'none'
+      esporte4.style.height = '750px'
+      esporte4.style.gridColumn = 'span 2'
+      esporte5.style.display = 'none'
+  
+      menuAbas4.style.display = 'flex'
+      esporte4AbrirButton.style.display = 'none'
+      esporte4FecharButton.style.display = 'block'
 
-  if (curiosidade == 5) {
-    curiosidade1.style.display = 'none'
-    curiosidade2.style.display = 'none'
-    curiosidade3.style.display = 'none'
-    curiosidade4.style.display = 'none'
-    curiosidade5.style.height = '90vh'
+      break
 
-    form5.style.display = 'flex'
-    curiosidade5AbrirButton.style.display = 'none'
-    curiosidade5FecharButton.style.display = 'block'
+    case 5:
+      esporte1.style.display = 'none'
+      esporte2.style.display = 'none'
+      esporte3.style.display = 'none'
+      esporte4.style.display = 'none'
+      esporte5.style.height = '750px'
+  
+      menuAbas5.style.display = 'flex'
+      esporte5AbrirButton.style.display = 'none'
+      esporte5FecharButton.style.display = 'block'
+
+      break
+
+    default:
   }
 }
 
-const animacaoFechar = (curiosidade) => {
-  const curiosidade1 = document.getElementById('curiosidade1')
-  const curiosidade2 = document.getElementById('curiosidade2')
-  const curiosidade3 = document.getElementById('curiosidade3')
-  const curiosidade4 = document.getElementById('curiosidade4')
-  const curiosidade5 = document.getElementById('curiosidade5')
-  const curiosidade1AbrirButton = document.getElementById('curiosidade1AbrirButton')
-  const curiosidade2AbrirButton = document.getElementById('curiosidade2AbrirButton')
-  const curiosidade3AbrirButton = document.getElementById('curiosidade3AbrirButton')
-  const curiosidade4AbrirButton = document.getElementById('curiosidade4AbrirButton')
-  const curiosidade5AbrirButton = document.getElementById('curiosidade5AbrirButton')
-  const curiosidade1FecharButton = document.getElementById('curiosidade1FecharButton')
-  const curiosidade2FecharButton = document.getElementById('curiosidade2FecharButton')
-  const curiosidade3FecharButton = document.getElementById('curiosidade3FecharButton')
-  const curiosidade4FecharButton = document.getElementById('curiosidade4FecharButton')
-  const curiosidade5FecharButton = document.getElementById('curiosidade5FecharButton')
-  const form1 = document.getElementById('form1')
-  const form2 = document.getElementById('form2')
-  const form3 = document.getElementById('form3')
-  const form4 = document.getElementById('form4')
-  const form5 = document.getElementById('form5')
+const animacaoFechar = (esporte) => {
+  const esporte1 = document.getElementById('esporte1')
+  const esporte2 = document.getElementById('esporte2')
+  const esporte3 = document.getElementById('esporte3')
+  const esporte4 = document.getElementById('esporte4')
+  const esporte5 = document.getElementById('esporte5')
+  const esporte1AbrirButton = document.getElementById('esporte1AbrirButton')
+  const esporte2AbrirButton = document.getElementById('esporte2AbrirButton')
+  const esporte3AbrirButton = document.getElementById('esporte3AbrirButton')
+  const esporte4AbrirButton = document.getElementById('esporte4AbrirButton')
+  const esporte5AbrirButton = document.getElementById('esporte5AbrirButton')
+  const esporte1FecharButton = document.getElementById('esporte1FecharButton')
+  const esporte2FecharButton = document.getElementById('esporte2FecharButton')
+  const esporte3FecharButton = document.getElementById('esporte3FecharButton')
+  const esporte4FecharButton = document.getElementById('esporte4FecharButton')
+  const esporte5FecharButton = document.getElementById('esporte5FecharButton')
+  const menuAbas1 = document.getElementById('menuAbas1')
+  const menuAbas2 = document.getElementById('menuAbas2')
+  const menuAbas3 = document.getElementById('menuAbas3')
+  const menuAbas4 = document.getElementById('menuAbas4')
+  const menuAbas5 = document.getElementById('menuAbas5')
 
-  if (curiosidade == 1) {
-    curiosidade1.style.height = '250px'
-    curiosidade1.style.gridColumn = 'span 1'
-    curiosidade2.style.display = 'flex'
-    curiosidade3.style.display = 'flex'
-    curiosidade4.style.display = 'flex'
-    curiosidade5.style.display = 'flex'
+  switch (esporte) {
+    case 1:
+      esporte1.style.height = '250px'
+      esporte1.style.gridColumn = 'span 1'
+      esporte2.style.display = 'flex'
+      esporte3.style.display = 'flex'
+      esporte4.style.display = 'flex'
+      esporte5.style.display = 'flex'
 
-    form1.style.display = 'none'
-    curiosidade1AbrirButton.style.display = 'block'
-    curiosidade1FecharButton.style.display = 'none'
+      menuAbas1.style.display = 'none'
+      esporte1AbrirButton.style.display = 'block'
+      esporte1FecharButton.style.display = 'none'
+
+      break
+
+    case 2:
+      esporte1.style.display = 'flex'
+      esporte2.style.height = '250px'
+      esporte2.style.gridColumn = 'span 1'
+      esporte3.style.display = 'flex'
+      esporte4.style.display = 'flex'
+      esporte5.style.display = 'flex'
+  
+      menuAbas2.style.display = 'none'
+      esporte2AbrirButton.style.display = 'block'
+      esporte2FecharButton.style.display = 'none'
+
+      break
+
+    case 3:
+      esporte1.style.display = 'flex'
+      esporte2.style.display = 'flex'
+      esporte3.style.height = '250px'
+      esporte3.style.gridColumn = 'span 1'
+      esporte4.style.display = 'flex'
+      esporte5.style.display = 'flex'
+  
+      menuAbas3.style.display = 'none'
+      esporte3AbrirButton.style.display = 'block'
+      esporte3FecharButton.style.display = 'none'
+
+      break
+
+    case 4:
+      esporte1.style.display = 'flex'
+      esporte2.style.display = 'flex'
+      esporte3.style.display = 'flex'
+      esporte4.style.height = '250px'
+      esporte4.style.gridColumn = 'span 1'
+      esporte5.style.display = 'flex'
+  
+      menuAbas4.style.display = 'none'
+      esporte4AbrirButton.style.display = 'block'
+      esporte4FecharButton.style.display = 'none'
+      break
+
+    case 5:
+      esporte1.style.display = 'flex'
+      esporte2.style.display = 'flex'
+      esporte3.style.display = 'flex'
+      esporte4.style.display = 'flex'
+      esporte5.style.height = '250px'
+  
+      menuAbas5.style.display = 'none'
+      esporte5AbrirButton.style.display = 'block'
+      esporte5FecharButton.style.display = 'none'
+
+      break
+
+    default:
   }
-
-  if (curiosidade == 2) {
-    curiosidade1.style.display = 'flex'
-    curiosidade2.style.height = '250px'
-    curiosidade2.style.gridColumn = 'span 1'
-    curiosidade3.style.display = 'flex'
-    curiosidade4.style.display = 'flex'
-    curiosidade5.style.display = 'flex'
-
-    form2.style.display = 'none'
-    curiosidade2AbrirButton.style.display = 'block'
-    curiosidade2FecharButton.style.display = 'none'
-  }
-
-  if (curiosidade == 3) {
-    curiosidade1.style.display = 'flex'
-    curiosidade2.style.display = 'flex'
-    curiosidade3.style.height = '250px'
-    curiosidade3.style.gridColumn = 'span 1'
-    curiosidade4.style.display = 'flex'
-    curiosidade5.style.display = 'flex'
-
-    form3.style.display = 'none'
-    curiosidade3AbrirButton.style.display = 'block'
-    curiosidade3FecharButton.style.display = 'none'
-  }
-
-  if (curiosidade == 4) {
-    curiosidade1.style.display = 'flex'
-    curiosidade2.style.display = 'flex'
-    curiosidade3.style.display = 'flex'
-    curiosidade4.style.height = '250px'
-    curiosidade4.style.gridColumn = 'span 1'
-    curiosidade5.style.display = 'flex'
-
-    form4.style.display = 'none'
-    curiosidade4AbrirButton.style.display = 'block'
-    curiosidade4FecharButton.style.display = 'none'
-  }
-
-  if (curiosidade == 5) {
-    curiosidade1.style.display = 'flex'
-    curiosidade2.style.display = 'flex'
-    curiosidade3.style.display = 'flex'
-    curiosidade4.style.display = 'flex'
-    curiosidade5.style.height = '250px'
-
-    form5.style.display = 'none'
-    curiosidade5AbrirButton.style.display = 'block'
-    curiosidade5FecharButton.style.display = 'none'
-  } 
 }
 
 // Eventos de clique
 
-document.getElementById("curiosidade1OKButton").addEventListener("click", () => {
+document.getElementById("1aba1OKButton").addEventListener("click", () => {
   const dados = lerArquivoCSV('athlete_events.csv')
-  dados.then((resultado) => curiosidade1(resultado))
+  dados.then((resultado) => curiosidade1(resultado, 1))
 })
 
-document.getElementById("curiosidade2OKButton").addEventListener("click", () => {
+document.getElementById("1aba2OKButton").addEventListener("click", () => {
   const dados = lerArquivoCSV('athlete_events.csv')
-  dados.then((resultado) => curiosidade2(resultado))
+  dados.then((resultado) => curiosidade2(resultado, 1))
 })
 
-document.getElementById("curiosidade3OKButton").addEventListener("click", () => {
+document.getElementById("1aba3OKButton").addEventListener("click", () => {
   const dados = lerArquivoCSV('athlete_events.csv')
-  dados.then((resultado) => curiosidade3(resultado))
+  dados.then((resultado) => curiosidade3(resultado, 1))
 })
 
-document.getElementById("curiosidade4OKButton").addEventListener("click", () => {
+document.getElementById("1aba4OKButton").addEventListener("click", () => {
   const dados = lerArquivoCSV('athlete_events.csv')
-  dados.then((resultado) => curiosidade4(resultado))
+  dados.then((resultado) => curiosidade4(resultado, 1))
 })
 
-document.getElementById("curiosidade5OKButton").addEventListener("click", () => {
+document.getElementById("1aba5OKButton").addEventListener("click", () => {
   const dados = lerArquivoCSV('athlete_events.csv')
-  dados.then((resultado) => curiosidade5(resultado))
+  dados.then((resultado) => curiosidade5(resultado, 1))
 })
 
-document.getElementById("curiosidade1AbrirButton").addEventListener("click", () => animacaoAbrir(1))
-document.getElementById("curiosidade2AbrirButton").addEventListener("click", () => animacaoAbrir(2))
-document.getElementById("curiosidade3AbrirButton").addEventListener("click", () => animacaoAbrir(3))
-document.getElementById("curiosidade4AbrirButton").addEventListener("click", () => animacaoAbrir(4))
-document.getElementById("curiosidade5AbrirButton").addEventListener("click", () => animacaoAbrir(5))
+document.getElementById("2aba1OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade1(resultado, 2))
+})
 
-document.getElementById("curiosidade1FecharButton").addEventListener("click", () => animacaoFechar(1))
-document.getElementById("curiosidade2FecharButton").addEventListener("click", () => animacaoFechar(2))
-document.getElementById("curiosidade3FecharButton").addEventListener("click", () => animacaoFechar(3))
-document.getElementById("curiosidade4FecharButton").addEventListener("click", () => animacaoFechar(4))
-document.getElementById("curiosidade5FecharButton").addEventListener("click", () => animacaoFechar(5))
+document.getElementById("2aba2OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade2(resultado, 2))
+})
+
+document.getElementById("2aba3OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade3(resultado, 2))
+})
+
+document.getElementById("2aba4OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade4(resultado, 2))
+})
+
+document.getElementById("2aba5OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade5(resultado, 2))
+})
+
+document.getElementById("3aba1OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade1(resultado, 3))
+})
+
+document.getElementById("3aba2OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade2(resultado, 3))
+})
+
+document.getElementById("3aba3OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade3(resultado, 3))
+})
+
+document.getElementById("3aba4OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade4(resultado, 3))
+})
+
+document.getElementById("3aba5OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade5(resultado, 3))
+})
+
+document.getElementById("4aba1OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade1(resultado, 4))
+})
+
+document.getElementById("4aba2OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade2(resultado, 4))
+})
+
+document.getElementById("4aba3OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade3(resultado, 4))
+})
+
+document.getElementById("4aba4OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade4(resultado, 4))
+})
+
+document.getElementById("4aba5OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade5(resultado, 4))
+})
+
+document.getElementById("5aba1OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade1(resultado, 5))
+})
+
+document.getElementById("5aba2OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade2(resultado, 5))
+})
+
+document.getElementById("5aba3OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade3(resultado, 5))
+})
+
+document.getElementById("5aba4OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade4(resultado, 5))
+})
+
+document.getElementById("5aba5OKButton").addEventListener("click", () => {
+  const dados = lerArquivoCSV('athlete_events.csv')
+  dados.then((resultado) => curiosidade5(resultado, 5))
+})
+
+document.getElementById("esporte1AbrirButton").addEventListener("click", () => animacaoAbrir(1))
+document.getElementById("esporte2AbrirButton").addEventListener("click", () => animacaoAbrir(2))
+document.getElementById("esporte3AbrirButton").addEventListener("click", () => animacaoAbrir(3))
+document.getElementById("esporte4AbrirButton").addEventListener("click", () => animacaoAbrir(4))
+document.getElementById("esporte5AbrirButton").addEventListener("click", () => animacaoAbrir(5))
+
+document.getElementById("esporte1FecharButton").addEventListener("click", () => animacaoFechar(1))
+document.getElementById("esporte2FecharButton").addEventListener("click", () => animacaoFechar(2))
+document.getElementById("esporte3FecharButton").addEventListener("click", () => animacaoFechar(3))
+document.getElementById("esporte4FecharButton").addEventListener("click", () => animacaoFechar(4))
+document.getElementById("esporte5FecharButton").addEventListener("click", () => animacaoFechar(5))
